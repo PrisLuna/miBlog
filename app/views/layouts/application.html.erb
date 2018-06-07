@@ -10,6 +10,18 @@
 
   <body>
     <%= render 'shared/header' %>
-    <%= yield %>
+    <div class="container">
+<ul>
+  <% flash.each do |key, value| %>
+    <li>
+      <%= value %>
+    </li>
+    <% end %>
+</ul>
+
+        <%= yield %>
+    </div>
+
+
   </body>
 </html>
