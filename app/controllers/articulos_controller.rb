@@ -32,25 +32,18 @@ class ArticulosController < ApplicationController
     end
   end
 
-
   def show
     @articulo = Articulo.find(params[:id])
   end
 
-
-def destroy
-  @articulo = Articulo.find(params[:id])
-  @articulo.destroy
-  redirect_to articulos_path :notice => "Artículo eliminado correctamente"
-end
-
-
-
-
-
+  def destroy
+    @articulo = Articulo.find(params[:id])
+    @articulo.destroy
+    redirect_to articulos_path :notice => "Artículo eliminado correctamente"
+  end
 
   private
-  def articulo_params
-    params.require(:articulo).permit(:titulo, :contenido)
-  end
+    def articulo_params
+      params.require(:articulo).permit(:titulo, :contenido)
+    end
 end
